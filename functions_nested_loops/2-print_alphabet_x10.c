@@ -1,21 +1,8 @@
-#include "main.h"
+#ifndef MAIN_H
+#define MAIN_H
 
-/**
- * print_alphabet_x10 - prints alphabet 10 times
- *
- * Return: void
- */
-void print_alphabet_x10(void)
-{
-	int i;
-	char c;
+int _putchar(char c);
+void print_alphabet(void);
+void print_alphabet_x10(void);
 
-	for (i = 0; i < 10; i++)
-	{
-		for (c = 'a'; c <= 'z'; c++)
-		{
-			_putchar(c);
-		}
-		_putchar('\n');
-	}
-}
+#endif
