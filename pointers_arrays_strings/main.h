@@ -9,5 +9,6 @@ void reverse_array(int *a, int n);
 char *string_toupper(char *str);
 char *cap_string(char *str);
 char *leet(char *str);
+char *_memset(char *s, char b, unsigned int n);
 
 #endif
