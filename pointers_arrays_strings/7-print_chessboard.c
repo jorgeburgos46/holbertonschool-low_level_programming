@@ -1,5 +1,7 @@
 #include "main.h"
 
+int _putchar(char c);
+
 /**
  * print_chessboard - prints the chessboard
  * @a: pointer to an array of 8 chars
