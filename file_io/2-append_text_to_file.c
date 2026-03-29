@@ -1,19 +1,17 @@
 #include "main.h"
-#include <fcntl.h>
-#include <unistd.h>
 
 /**
  * append_text_to_file - appends text at the end of a file
  * @filename: name of the file
- * @text_content: NULL terminated string to add at the end of the file
+ * @text_content: NULL terminated string to add
  *
  * Return: 1 on success, -1 on failure
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd;
-	int len;
-	ssize_t w_bytes;
+	unsigned int len;
+	ssize_t check;
 
 	if (filename == NULL)
 		return (-1);
@@ -28,8 +26,8 @@ int append_text_to_file(const char *filename, char *text_content)
 		while (text_content[len] != '\0')
 			len++;
 
-		w_bytes = write(fd, text_content, len);
-		if (w_bytes == -1 || w_bytes != len)
+		check = write(fd, text_content, len);
+		if (check == -1 || (unsigned int)check != len)
 		{
 			close(fd);
 			return (-1);
